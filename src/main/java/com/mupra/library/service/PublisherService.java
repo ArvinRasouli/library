@@ -7,6 +7,4 @@ public interface PublisherService {
     Publisher addPublisher(AddPublisherRequest addPublisherRequest);
 
     Publisher getPublisherById(int id);
-
-
 }

@@ -1,5 +1,7 @@
 package com.mupra.library.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,7 @@ public class Publisher {
     private int establishedYear;
 
     @OneToMany(mappedBy = "publisher")
+    // @JsonIgnore
     private List<Book> bookList;
 
     public Publisher() {
