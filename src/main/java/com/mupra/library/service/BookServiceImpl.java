@@ -7,6 +7,8 @@ import com.mupra.library.entity.Book;
 import com.mupra.library.entity.Publisher;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookServiceImpl implements BookService{
 
@@ -35,5 +37,10 @@ public class BookServiceImpl implements BookService{
         book.setAuthor(authorById);
 
         return bookDAO.save(book);
+    }
+
+    @Override
+    public List<Book> findAllBook() {
+        return bookDAO.findAll();
     }
 }

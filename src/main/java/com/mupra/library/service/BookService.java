@@ -8,5 +8,5 @@ import java.util.List;
 public interface BookService {
     Book addBook(AddBookRequest addBookRequest);
 
-    // List<Book> findAllBook();
+    List<Book> findAllBook();
 }
