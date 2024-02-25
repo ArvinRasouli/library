@@ -22,7 +22,7 @@ public class Publisher {
     private int establishedYear;
 
     @OneToMany(mappedBy = "publisher")
-    // @JsonIgnore
+    @JsonIgnore
     private List<Book> bookList;
 
     public Publisher() {

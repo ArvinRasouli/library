@@ -18,4 +18,11 @@ public class AuthorServiceImpl implements AuthorService{
         Author author = new Author(addAuthorRequest.getName(), addAuthorRequest.getBirthDate());
         return authorDAO.save(author);
     }
+
+    @Override
+    public Author getAuthorById(int id) {
+        return authorDAO.findById(id).orElseThrow(
+                () -> new RuntimeException("Author not exist")
+        );
+    }
 }

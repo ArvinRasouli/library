@@ -6,4 +6,5 @@ import com.mupra.library.entity.Author;
 public interface AuthorService {
     Author addAuthor(AddAuthorRequest addAuthorRequest);
 
+    Author getAuthorById(int id);
 }
