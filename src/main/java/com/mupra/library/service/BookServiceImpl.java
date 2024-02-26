@@ -36,6 +36,22 @@ public class BookServiceImpl implements BookService{
         book.setPublisher(publisherById);
         book.setAuthor(authorById);
 
+        if (book.getName().length() > 100) {
+            throw new RuntimeException("The length of the book name exceeds the limit");
+        }
+
+        if (book.getName().isEmpty()) {
+            throw new RuntimeException("book name field cannot be empty");
+        }
+
+        if (book.getPrintYear() > 1402 || book.getPrintYear() <= 0 ) {
+            throw new RuntimeException("The data entered in the year of print field is invalid");
+        }
+
+        if (book.getInventory() < 0) {
+            throw new RuntimeException("The inventory field data cannot be smaller than 0");
+        }
+
         return bookDAO.save(book);
     }
 

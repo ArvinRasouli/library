@@ -16,6 +16,15 @@ public class AuthorServiceImpl implements AuthorService{
     @Override
     public Author addAuthor(AddAuthorRequest addAuthorRequest) {
         Author author = new Author(addAuthorRequest.getName(), addAuthorRequest.getBirthDate());
+
+        if (author.getName().length() > 50){
+            throw new RuntimeException("The length of the author name exceeds the limit");
+        }
+
+        if (author.getName().isEmpty()) {
+            throw new RuntimeException("Author name field cannot be empty");
+        }
+
         return authorDAO.save(author);
     }
 

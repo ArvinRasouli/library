@@ -1,6 +1,9 @@
 package com.mupra.library.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "book")
@@ -11,12 +14,16 @@ public class Book {
     @Column(name = "id")
     private int id;
 
+//    @Size(max = 100, message = "Name length must be less than or equal to 100 characters")
     @Column(name = "name")
     private String name;
 
+//    @Min(value = 0, message = "Print year must be greater then or equal to 0")
+//    @Max(value = 1402, message = "Print year must be less than 1403")
     @Column(name = "print_year")
     private int printYear;
 
+//    @Min(value = 0, message = "Print year must be greater then or equal to 0")
     @Column(name = "inventory")
     private int inventory;
 

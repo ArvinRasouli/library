@@ -3,6 +3,9 @@ package com.mupra.library.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +18,12 @@ public class Publisher {
     @Column(name = "id")
     private int id;
 
+//    @Size(max = 100, message = "Name length must be less than or equal to 100 characters")
     @Column(name = "name")
     private String name;
 
+//    @Min(value = 0, message = "Established year must be greater then or equal to 0")
+//    @Max(value = 1402, message = "Established year must be less than 1403")
     @Column(name = "established_year")
     private int establishedYear;
 

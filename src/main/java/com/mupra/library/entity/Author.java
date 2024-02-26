@@ -3,6 +3,7 @@ package com.mupra.library.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,6 +16,7 @@ public class Author {
     @Column(name = "id")
     private int id;
 
+//    @Size(max = 50, message = "Name length must be less than or equal to 50 characters")
     @Column(name = "name")
     private String name;
 
