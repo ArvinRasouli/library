@@ -9,4 +9,6 @@ public interface BookService {
     Book addBook(AddBookRequest addBookRequest);
 
     List<Book> findAllBook();
+
+    void changeInventoryAllBooks();
 }

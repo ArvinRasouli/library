@@ -43,4 +43,15 @@ public class BookServiceImpl implements BookService{
     public List<Book> findAllBook() {
         return bookDAO.findAll();
     }
+
+    @Override
+    public void changeInventoryAllBooks() {
+        List<Book> allBook = bookDAO.findAll();
+        for (Book book : allBook) {
+            book.setInventory(10);
+
+        }
+
+        bookDAO.saveAll(allBook);
+    }
 }
